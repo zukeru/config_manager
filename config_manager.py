@@ -84,7 +84,7 @@ def restart_application_name(application_name, restart_application, logger):
     try:
         if restart_application == 'true':
             reload_command = "service %s reload" % application_name
-            reloaded = shell_command_execute(reload_command) 
+            reloaded = shell_command_execute(reload_command, logger) 
             return reloaded
     except Exception as e:
         logger.error(str(e))
